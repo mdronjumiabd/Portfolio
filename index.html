@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- BASIC SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebDesigner | Professional Web Designer Portfolio</title>
+  <meta name="description" content="Professional Web Designer & UI/UX Specialist portfolio showcasing modern, responsive, and creative web design projects." />
+  <meta name="author" content="WebDesigner" />
+
+  <!-- FAVICON (🎨 Emoji SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+      <text y='0.9em' font-size='90'>🎨</text>
+    </svg>">
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* =====================
+       ROOT & RESET
+    ====================== */
+    :root {
+      --bg-dark: #0f0f0f;
+      --bg-dark-2: #1a1a1a;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --accent-1: #3b82f6;
+      --accent-2: #8b5cf6;
+      --text-main: #ffffff;
+      --text-muted: #e5e7eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-2));
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* =====================
+       BACKGROUND EFFECTS
+    ====================== */
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.6;
+      animation: float 20s infinite alternate ease-in-out;
+    }
+
+    .orb.blue {
+      background: #3b82f6;
+      width: 400px;
+      height: 400px;
+      top: 10%;
+      left: 5%;
+    }
+
+    .orb.purple {
+      background: #8b5cf6;
+      width: 350px;
+      height: 350px;
+      bottom: 15%;
+      right: 10%;
+    }
+
+    .orb.mix {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      width: 300px;
+      height: 300px;
+      top: 50%;
+      left: 40%;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-60px); }
+    }
+
+    /* =====================
+       GLASS UTILITY
+    ====================== */
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(25px);
+      border: 1.5px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(59,130,246,0.6);
+    }
+
+    /* =====================
+       NAVBAR
+    ====================== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .logo i {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      position: relative;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    nav a.active::after,
+    nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* =====================
+       SECTIONS
+    ====================== */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 6rem 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      margin-top: 0.8rem;
+    }
+
+    /* =====================
+       HERO
+    ====================== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 1.2rem 0 2rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    }
+
+    .btn.outline {
+      background: transparent;
+      border: 1px solid var(--glass-border);
+    }
+
+    /* =====================
+       PROFILE CARD
+    ====================== */
+    .profile-card {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .avatar-ring {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      margin: auto;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .avatar {
+      width: 200px;
+      height: 200px;
+      background: #111;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    /* =====================
+       SKILLS GRID
+    ====================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill h3 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    .progress {
+      height: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      width: 0;
+      animation: load 1.5s forwards;
+    }
+
+    @keyframes load {
+      to { width: var(--value); }
+    }
+
+    /* =====================
+       PROJECTS
+    ====================== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-header {
+      height: 160px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .tag {
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(59,130,246,0.25);
+      font-size: 0.85rem;
+      color: #60a5fa;
+    }
+
+    /* =====================
+       CONTACT
+    ====================== */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--glass-border);
+      background: transparent;
+      color: #fff;
+      font-family: inherit;
+    }
+
+    form textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    /* =====================
+       FOOTER
+    ====================== */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* =====================
+       RESPONSIVE
+    ====================== */
+    @media (max-width: 968px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .contact {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav ul {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="background">
+    <div class="orb blue"></div>
+    <div class="orb purple"></div>
+    <div class="orb mix"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="glass">
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-palette"></i>
+        WebDesigner
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div>
+      <h1>Hi, I'm <span>Creative Designer</span></h1>
+      <p>
+        I design clean, modern, and user-friendly websites with a strong focus on usability,
+        performance, and visual clarity.
+      </p>
+      <div class="buttons">
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="#contact" class="btn outline">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="profile-card glass">
+      <div class="avatar-ring">
+        <div class="avatar">🎨</div>
+      </div>
+      <h3 style="margin-top:1rem;">Web Designer</h3>
+      <p class="text-muted">Passionate about UI, UX, and modern web experiences.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-title">
+      <h2>Design Skills & Expertise</h2>
+      <p>Tools and technologies I work with</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="glass skill">
+        <h3>Web Design</h3>
+        <div class="progress"><span style="--value:95%"></span></div>
+      </div>
+      <div class="glass skill">
+        <h3>UI / UX Design</h3>
+        <div class="progress"><span style="--value:92%"></span></div>
+      </div>
+      <div class="glass skill">
+        <h3>Figma & Adobe XD</h3>
+        <div class="progress"><span style="--value:90%"></span></div>
+      </div>
+      <div class="glass skill">
+        <h3>HTML & CSS</h3>
+        <div class="progress"><span style="--value:88%"></span></div>
+      </div>
+      <div class="glass skill">
+        <h3>Graphic Design</h3>
+        <div class="progress"><span style="--value:85%"></span></div>
+      </div>
+      <div class="glass skill">
+        <h3>Responsive Design</h3>
+        <div class="progress"><span style="--value:93%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title">
+      <h2>Featured Design Projects</h2>
+      <p>Selected work and concepts</p>
+    </div>
+
+    <div class="projects">
+      <div class="glass">
+        <div class="project-header"><i class="fa-solid fa-store"></i></div>
+        <h3>E-Commerce Website</h3>
+        <div class="tags">
+          <span class="tag">Figma</span>
+          <span class="tag">UI Design</span>
+          <span class="tag">Responsive</span>
+          <span class="tag">E-Commerce</span>
+        </div>
+      </div>
+
+      <div class="glass">
+        <div class="project-header"><i class="fa-solid fa-briefcase"></i></div>
+        <h3>Corporate Website</h3>
+        <div class="tags">
+          <span class="tag">Adobe XD</span>
+          <span class="tag">Branding</span>
+          <span class="tag">Corporate</span>
+          <span class="tag">Minimal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Me</h2>
+      <p>Let’s work together</p>
+    </div>
+
+    <div class="contact">
+      <div class="glass">
+        <p><strong>Email:</strong> hello@example.com</p>
+        <p><strong>Location:</strong> Worldwide</p>
+        <p><strong>Website:</strong> yoursite.com</p>
+      </div>
+
+      <form class="glass" id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Subject" required />
+        <textarea placeholder="Message" required></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="glass">
+    © 2026 WebDesigner — Built with passion.
+  </footer>
+
+  <script>
+    // SIMPLE FORM HANDLER (SAFE)
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent.");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
