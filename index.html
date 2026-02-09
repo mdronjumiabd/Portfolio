@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebDesigner Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Md. Ronju Mia | Web Designer Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
-  <meta name="description" content="Professional Web Designer & UI/UX Specialist Portfolio">
-  <meta name="author" content="WebDesigner">
+  <meta name="description" content="Md. Ronju Mia - Professional Web Designer & UI/UX Specialist">
+  <meta name="author" content="Md. Ronju Mia">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,26 +27,21 @@
       font-family: 'Inter', sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
-      color: #fff;
+      color: #ffffff;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     /* GLASS */
     .glass {
       background: rgba(255,255,255,0.08);
       backdrop-filter: blur(25px);
       border: 1.5px solid rgba(255,255,255,0.18);
-      border-radius: 16px;
+      border-radius: 18px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.37);
     }
 
@@ -59,65 +54,74 @@
     }
 
     nav {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: auto;
-      padding: 1rem 1.5rem;
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
+      font-size: 1.4rem;
       font-weight: 700;
-      font-size: 1.2rem;
       display: flex;
-      gap: 0.5rem;
+      gap: 0.6rem;
       align-items: center;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
+      font-weight: 500;
     }
 
     .menu-toggle {
       display: none;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       cursor: pointer;
     }
 
-    /* MOBILE MENU */
+    /* MOBILE NAV */
     .mobile-nav {
       position: fixed;
-      top: 70px;
+      top: 80px;
       right: -100%;
-      width: 220px;
+      width: 240px;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.2rem;
       transition: 0.4s ease;
       z-index: 999;
     }
 
-    .mobile-nav.active {
-      right: 20px;
-    }
+    .mobile-nav.active { right: 20px; }
 
     /* SECTIONS */
     section {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: auto;
-      padding: 4rem 1.5rem;
+      padding: 6rem 2rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
     }
 
     /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 3rem;
-      padding-top: 7rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 4rem;
+      padding-top: 9rem;
       align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      line-height: 1.2;
     }
 
     .hero h1 span {
@@ -126,23 +130,31 @@
       -webkit-text-fill-color: transparent;
     }
 
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      color: #e5e7eb;
+      max-width: 520px;
+    }
+
     .btn {
-      padding: 0.8rem 1.5rem;
-      border-radius: 25px;
+      padding: 0.9rem 1.8rem;
+      border-radius: 30px;
       background: linear-gradient(135deg, #3b82f6, #8b5cf6);
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      font-weight: 500;
     }
 
     /* PROFILE */
     .profile {
+      padding: 2.5rem;
       text-align: center;
-      padding: 2rem;
     }
 
     .avatar {
-      width: 200px;
-      height: 200px;
+      width: 210px;
+      height: 210px;
       border-radius: 50%;
       background: linear-gradient(135deg, #3b82f6, #8b5cf6);
       display: flex;
@@ -152,16 +164,21 @@
       margin: auto;
     }
 
+    .profile h3 {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+    }
+
     .socials {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 0.8rem;
-      margin: 1.5rem 0;
+      gap: 0.9rem;
+      margin: 1.8rem 0;
     }
 
     .socials a {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: rgba(255,255,255,0.15);
       display: flex;
@@ -172,24 +189,25 @@
     /* SKILLS */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
     .skill {
-      padding: 1.5rem;
+      padding: 1.8rem;
     }
 
     .skill-header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
     }
 
     .progress {
       background: rgba(255,255,255,0.15);
       border-radius: 10px;
-      height: 8px;
+      height: 10px;
       overflow: hidden;
     }
 
@@ -203,23 +221,44 @@
     /* PROJECTS */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
 
     .project {
-      padding: 1.5rem;
+      padding: 2rem;
+    }
+
+    .project h3 {
+      margin-bottom: 0.6rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(59,130,246,0.3);
+      font-size: 0.85rem;
     }
 
     /* CONTACT */
     form {
+      max-width: 520px;
+      padding: 2rem;
       display: grid;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     input, textarea {
-      padding: 0.8rem;
-      border-radius: 10px;
+      padding: 0.9rem;
+      border-radius: 12px;
       border: none;
       outline: none;
     }
@@ -227,7 +266,7 @@
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem;
       font-size: 0.9rem;
       opacity: 0.8;
     }
@@ -237,24 +276,23 @@
       position: fixed;
       bottom: 25px;
       right: 25px;
-      width: 45px;
-      height: 45px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: rgba(255,255,255,0.15);
       display: none;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      z-index: 999;
     }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      h2 { font-size: 2rem; }
+      .hero h1 { font-size: 2.4rem; }
     }
   </style>
 </head>
@@ -263,7 +301,7 @@
 
 <header class="glass">
   <nav>
-    <div class="logo"><i class="fa fa-palette"></i> WebDesigner</div>
+    <div class="logo"><i class="fa fa-palette"></i> Ronju</div>
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#skills">Skills</a>
@@ -283,8 +321,8 @@
 
 <section id="home" class="hero">
   <div>
-    <h1>Hi, I'm <span>Creative Designer</span></h1>
-    <p>Professional Web Designer & UI/UX Specialist.</p>
+    <h1>Hi, I'm <span>Md. Ronju Mia</span></h1>
+    <p>Professional Web Designer & UI/UX Specialist creating clean, modern, and responsive websites.</p>
     <a href="#projects" class="btn">View My Work</a>
   </div>
 
@@ -306,7 +344,7 @@
   <h2>Design Skills & Expertise</h2>
   <div class="skills-grid">
     <div class="glass skill"><div class="skill-header"><span>Web Design</span><span>95%</span></div><div class="progress"><span style="--value:95%"></span></div></div>
-    <div class="glass skill"><div class="skill-header"><span>UI/UX</span><span>92%</span></div><div class="progress"><span style="--value:92%"></span></div></div>
+    <div class="glass skill"><div class="skill-header"><span>UI/UX Design</span><span>92%</span></div><div class="progress"><span style="--value:92%"></span></div></div>
     <div class="glass skill"><div class="skill-header"><span>HTML & CSS</span><span>88%</span></div><div class="progress"><span style="--value:88%"></span></div></div>
   </div>
 </section>
@@ -314,24 +352,53 @@
 <section id="projects">
   <h2>Featured Projects</h2>
   <div class="projects-grid">
-    <div class="glass project">E-Commerce Website</div>
-    <div class="glass project">Corporate Website</div>
-    <div class="glass project">Portfolio Design</div>
+    <div class="glass project">
+      <h3>E-Commerce Website</h3>
+      <p>Modern online store with clean UI and responsive layout.</p>
+      <div class="tags">
+        <span class="tag">UI Design</span>
+        <span class="tag">Responsive</span>
+        <span class="tag">E-Commerce</span>
+      </div>
+    </div>
+
+    <div class="glass project">
+      <h3>Corporate Website</h3>
+      <p>Professional business website with minimal design.</p>
+      <div class="tags">
+        <span class="tag">Corporate</span>
+        <span class="tag">Branding</span>
+        <span class="tag">UX</span>
+      </div>
+    </div>
+
+    <div class="glass project">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio showcasing creative projects.</p>
+      <div class="tags">
+        <span class="tag">Portfolio</span>
+        <span class="tag">Creative</span>
+        <span class="tag">Design</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact Me</h2>
-  <form class="glass">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea rows="4" placeholder="Message" required></textarea>
-    <button class="btn">Send Message</button>
+  <form class="glass"
+    action="mailto:mdronjumiabd2005@gmail.com"
+    method="POST"
+    enctype="text/plain">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+    <button class="btn" type="submit">Send Message</button>
   </form>
 </section>
 
 <footer class="glass">
-  © 2026 WebDesigner — Built with passion
+  © 2026 Md. Ronju Mia — Built with passion
 </footer>
 
 <div class="back-top" id="backTop"><i class="fa fa-arrow-up"></i></div>
